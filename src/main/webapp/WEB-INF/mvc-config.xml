@@ -11,7 +11,7 @@
             base-package="org.springframework.samples.web"/>
 
 
-    <context:component-scan base-package="jp.co.trelloCopy" />
+    <context:component-scan base-package="jp.co.torelloCopy" />
     <mvc:annotation-driven />
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
        <property name="basename" value="classpath:ValidatorMessages" />
@@ -37,7 +37,7 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="jp.co.e.mapper" />
+        <property name="basePackage" value="jp.co.torelloCopy.mapper" />
     </bean>
     <bean id="transactionManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
