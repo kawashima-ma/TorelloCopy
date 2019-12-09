@@ -10,7 +10,6 @@ public class UserFactory {
 	public User createEncrypt(UserDto dto) {
 		return new User(
 				null,
-				dto.getLogin_id(),
 				dto.getName(),
 				CipherUtil.encrypt(dto.getPassword())
 				);

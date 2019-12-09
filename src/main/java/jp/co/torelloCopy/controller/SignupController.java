@@ -15,8 +15,6 @@ import jp.co.torelloCopy.form.SignupForm;
 import jp.co.torelloCopy.service.SignupService;
 
 
-
-
 @Controller
 public class SignupController {
 	@Autowired
@@ -27,14 +25,14 @@ public class SignupController {
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(@ModelAttribute SignupForm signupForm, Model model) {
 		model.addAttribute("signupForm", signupForm);
-		return "/signup";
+		return "signup";
 
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(@ModelAttribute @Validated(SignupForm.All.class)SignupForm signupForm, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			return "/signup";
+			return "signup";
 		}
 
 		String password = signupForm.getPassword();
@@ -48,8 +46,8 @@ public class SignupController {
 		try {
 			signupService.registUser(userDtoFactory.sign(signupForm));
 		} catch (DuplicateKeyException ex) {
-			result.rejectValue("login_id", "ログインIDが既に使用されています", "ログインIDが既に使用されています");
-			return "/signup";
+			result.rejectValue("password", "パスワードが既に使用されています", "パスワードが既に使用されています");
+			return "signup";
 		}
 
 		return "redirect:login";
