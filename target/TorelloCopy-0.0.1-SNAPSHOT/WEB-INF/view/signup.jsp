@@ -7,7 +7,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="<c:url value="/resources/css/signup.css" />" rel="stylesheet">
 <title>ユーザー登録</title>
 </head>
 <body>
@@ -17,7 +16,6 @@
 			<p class="form-title">ユーザー登録</p>
 
 			<div class="error">
-				<div><form:errors path="login_id"/></div>
 				<div><form:errors path="name"/></div>
 				<div><form:errors path="password"/></div>
 				<div><form:errors path="confirmPassword"/></div>
@@ -27,9 +25,6 @@
 					<c:remove var="errorMessage" scope="session" />
 				</c:if>
 			</div><br/>
-
-				<form:label type="login_id"  path="login_id">ログインID</form:label>
-				<p class="loginId"><form:input type="login_id" path="login_id" /></p>
 
 				<form:label type="name"  path="name">名前</form:label>
 		        <p class="name"><form:input type="name" path="name" /></p>

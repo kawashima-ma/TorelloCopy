@@ -45,6 +45,6 @@ public class LoginController {
 
 		session.setAttribute("loginUser",user);
 
-		return "redirect:";
+		return "redirect:/";
 	}
 }
