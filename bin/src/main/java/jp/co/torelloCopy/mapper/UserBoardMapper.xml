@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.torelloCopy.mapper.UserBoardMapper">
+<select id="getBoardIdList" resultType="jp.co.torelloCopy.entity.UserBoard">
+	SELECT
+		user_board.id as id,
+		user_board.user_id as user_id,
+		user_board.board_id as board_id,
+		boards.name as board_name
+	FROM
+		user_board
+	JOIN
+		boards
+	ON
+		user_board.board_id = boards.id
+	WHERE
+		user_board.user_id = #{user_id}
+</select>
+</mapper>

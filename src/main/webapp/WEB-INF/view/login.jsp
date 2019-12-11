@@ -7,13 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link href="<c:url value="/resources/css/login.css" />" rel="stylesheet" type="text/css">
+<title>Login</title>
 </head>
 <body>
 <form:form modelAttribute="loginForm" class="form" action="${pageContext.request.contextPath}/login" method="post">
 
 		<div id ="login">
-			<p class="form-title">ログイン</p>
+			<p class="form-title">Login</p>
 			<div class="error">
 				<div><form:errors path="name" ></form:errors></div>
 				<div><form:errors path="password"/></div>
@@ -22,12 +23,13 @@
 					 <c:remove var="errorMessage" scope="session" />
 				</c:if>
 			</div>
-				<form:label type="name" path="name">名前</form:label>
+				<form:label type="name" path="name">name</form:label>
 				<p class="name"><form:input type="name" path="name" /></p>
-		        <form:label type="password" path="password">パスワード</form:label>
+		         <p class="password-label"><form:label  type="password" path="password">password</form:label></p>
 		        <p class="password"><form:password path="password" /></p>
-		        <p class="submit"><input type="submit" value="ログイン"></p>
-		        <a href="signup" >ユーザー登録はこちら</a>
+		        <input type="submit" class="submit" value="Enter">
+		        <p><a href="signup" >Signup here</a></p>
+
         </div>
 		</form:form>
 </body>
